@@ -33,14 +33,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnCalculate = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtScore = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtScoreTotal = new System.Windows.Forms.TextBox();
+            this.txtScoreCount = new System.Windows.Forms.TextBox();
+            this.txtAverage = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -91,15 +91,17 @@
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnCalculate
+            // btnClear
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(75, 193);
-            this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(75, 23);
-            this.btnCalculate.TabIndex = 5;
-            this.btnCalculate.Text = "&Calculate";
-            this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(75, 193);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "Clear Scores";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
             // btnExit
             // 
@@ -110,13 +112,15 @@
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // textBox1
+            // txtScore
             // 
-            this.textBox1.Location = new System.Drawing.Point(106, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(60, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtScore.Location = new System.Drawing.Point(106, 32);
+            this.txtScore.Name = "txtScore";
+            this.txtScore.Size = new System.Drawing.Size(60, 20);
+            this.txtScore.TabIndex = 7;
+            this.txtScore.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -132,26 +136,30 @@
             this.textBox3.Size = new System.Drawing.Size(60, 20);
             this.textBox3.TabIndex = 9;
             // 
-            // textBox4
+            // txtScoreTotal
             // 
-            this.textBox4.Location = new System.Drawing.Point(106, 70);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(60, 20);
-            this.textBox4.TabIndex = 10;
+            this.txtScoreTotal.Location = new System.Drawing.Point(106, 70);
+            this.txtScoreTotal.Name = "txtScoreTotal";
+            this.txtScoreTotal.ReadOnly = true;
+            this.txtScoreTotal.Size = new System.Drawing.Size(60, 20);
+            this.txtScoreTotal.TabIndex = 10;
+            this.txtScoreTotal.TextChanged += new System.EventHandler(this.txtScoreTotal_TextChanged);
             // 
-            // textBox5
+            // txtScoreCount
             // 
-            this.textBox5.Location = new System.Drawing.Point(106, 102);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(60, 20);
-            this.textBox5.TabIndex = 11;
+            this.txtScoreCount.Location = new System.Drawing.Point(106, 102);
+            this.txtScoreCount.Name = "txtScoreCount";
+            this.txtScoreCount.ReadOnly = true;
+            this.txtScoreCount.Size = new System.Drawing.Size(60, 20);
+            this.txtScoreCount.TabIndex = 11;
             // 
-            // textBox6
+            // txtAverage
             // 
-            this.textBox6.Location = new System.Drawing.Point(106, 146);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(60, 20);
-            this.textBox6.TabIndex = 12;
+            this.txtAverage.Location = new System.Drawing.Point(106, 146);
+            this.txtAverage.Name = "txtAverage";
+            this.txtAverage.ReadOnly = true;
+            this.txtAverage.Size = new System.Drawing.Size(60, 20);
+            this.txtAverage.TabIndex = 12;
             // 
             // ScoreCalculator
             // 
@@ -160,14 +168,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(313, 259);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtAverage);
+            this.Controls.Add(this.txtScoreCount);
+            this.Controls.Add(this.txtScoreTotal);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtScore);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnCalculate);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -187,14 +195,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnCalculate;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtScore;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtScoreTotal;
+        private System.Windows.Forms.TextBox txtScoreCount;
+        private System.Windows.Forms.TextBox txtAverage;
     }
 }
 
