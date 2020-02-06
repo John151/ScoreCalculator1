@@ -88,7 +88,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 4;
+            this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -98,7 +98,7 @@
             this.btnClear.Location = new System.Drawing.Point(75, 193);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 5;
+            this.btnClear.TabIndex = 2;
             this.btnClear.Text = "Clear Scores";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnCalculate_Click);
@@ -109,7 +109,7 @@
             this.btnExit.Location = new System.Drawing.Point(195, 193);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 6;
+            this.btnExit.TabIndex = 3;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -119,7 +119,7 @@
             this.txtScore.Location = new System.Drawing.Point(106, 32);
             this.txtScore.Name = "txtScore";
             this.txtScore.Size = new System.Drawing.Size(60, 20);
-            this.txtScore.TabIndex = 7;
+            this.txtScore.TabIndex = 0;
             this.txtScore.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2

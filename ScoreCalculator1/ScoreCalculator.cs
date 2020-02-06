@@ -19,6 +19,7 @@ namespace ScoreCalculator1
 
         double scoreTotal = 0;
         int scoreCount = 0;
+        double average = 0;
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -62,9 +63,14 @@ namespace ScoreCalculator1
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            double scoreTotal = 0;
-            int scoreCount = 0;
-            double average = 0;
+           //** This part attempts to reset scoreTotal, scoreCount, and average
+           //to zero, but when we continue to add scores the other function remembers
+           //the previous entries. I'm looking into passing the values to different functions
+           //john **//
+           //update, working, removed "double" "int" specifiers
+            scoreTotal = 0;
+            scoreCount = 0;
+            average = 0;
 
             txtAverage.Text = Convert.ToString(average);
             txtScoreTotal.Text = Convert.ToString(scoreTotal);
